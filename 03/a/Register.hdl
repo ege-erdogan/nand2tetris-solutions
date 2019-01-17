@@ -14,5 +14,38 @@ CHIP Register {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+		// we have to add a mux for each bit since we can't sub-bus internal pins
+    Mux(a=back0, b=in[0], sel=load, out=mux0);
+		Mux(a=back1, b=in[1], sel=load, out=mux1);
+		Mux(a=back2, b=in[2], sel=load, out=mux2);
+		Mux(a=back3, b=in[3], sel=load, out=mux3);
+		Mux(a=back4, b=in[4], sel=load, out=mux4);
+		Mux(a=back5, b=in[5], sel=load, out=mux5);
+		Mux(a=back6, b=in[6], sel=load, out=mux6);
+		Mux(a=back7, b=in[7], sel=load, out=mux7);
+		Mux(a=back8, b=in[8], sel=load, out=mux8);
+		Mux(a=back9, b=in[9], sel=load, out=mux9);
+		Mux(a=back10, b=in[10], sel=load, out=mux10);
+		Mux(a=back11, b=in[11], sel=load, out=mux11);
+		Mux(a=back12, b=in[12], sel=load, out=mux12);
+		Mux(a=back13, b=in[13], sel=load, out=mux13);
+		Mux(a=back14, b=in[14], sel=load, out=mux14);
+		Mux(a=back15, b=in[15], sel=load, out=mux15);
+
+		DFF(in=mux0, out=out[0], out=back0);
+		DFF(in=mux1, out=out[1], out=back1);
+		DFF(in=mux2, out=out[2], out=back2);
+		DFF(in=mux3, out=out[3], out=back3);
+		DFF(in=mux4, out=out[4], out=back4);
+		DFF(in=mux5, out=out[5], out=back5);
+		DFF(in=mux6, out=out[6], out=back6);
+		DFF(in=mux7, out=out[7], out=back7);
+		DFF(in=mux8, out=out[8], out=back8);
+		DFF(in=mux9, out=out[9], out=back9);
+		DFF(in=mux10, out=out[10], out=back10);
+		DFF(in=mux11, out=out[11], out=back11);
+		DFF(in=mux12, out=out[12], out=back12);
+		DFF(in=mux13, out=out[13], out=back13);
+		DFF(in=mux14, out=out[14], out=back14);
+		DFF(in=mux15, out=out[15], out=back15);
 }
